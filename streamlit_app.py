@@ -8,7 +8,7 @@ openai.api_key = os.environ.get("OPENAI_API_KEY")
 # Function to send a message to the OpenAI chatbot model and return its response
 def send_message(message_log):
     # Use OpenAI's ChatCompletion API to get the chatbot's response
-    response = openai.chatCompletion.create(
+    response = openai.ChatCompletion.create(
         engine="chat-3.5-turbo",      # The name of the OpenAI chatbot model to use
         prompt=message_log,    # The conversation history up to this point, as a string
         max_tokens=4024,       # The maximum number of tokens (words or subwords) in the generated response
