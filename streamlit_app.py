@@ -1,5 +1,7 @@
 import openai
 import streamlit as st
+import os
+
 
 # Function to send a message to the OpenAI chatbot model and return its response
 def send_message(message_log):
@@ -21,13 +23,16 @@ def main():
     st.sidebar.title("OpenAI Chatbot")
     api_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
 
+    # Set up the OpenAI API key from the input value
+    openai.api_key = api_key
+
     # Initialize the conversation history with a message from the chatbot
     message_log = "You are a helpful assistant.\n"
 
     # Start a loop that runs until the user types "quit"
     while True:
         # Get the user's input and add it to the conversation history
-        user_input = st.text_input("You:", "")
+        user_input = st.text_input("You:", "", key="user_input")
         message_log += f"User: {user_input}\n"
 
         # If the user types "quit", end the loop and print a goodbye message
