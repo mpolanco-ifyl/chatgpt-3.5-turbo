@@ -1,9 +1,9 @@
 import openai
 import streamlit as st
+import os
 
-# Add a sidebar with a text input box for the API key
-st.sidebar.title("OpenAI Chatbot")
-api_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
+# Inicializa el modelo GPT-3
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
    
 # Function to send a message to the OpenAI chatbot model and return its response
