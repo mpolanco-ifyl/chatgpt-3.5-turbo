@@ -1,6 +1,5 @@
 import openai
 import streamlit as st
-import os
 
 # Function to send a message to the OpenAI chatbot model and return its response
 def send_message(message_log):
