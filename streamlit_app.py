@@ -25,9 +25,6 @@ def main():
     st.sidebar.title("OpenAI Chatbot")
     api_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
 
-    # Set up the OpenAI API key from the input value
-    openai.api_key = api_key
-
     # Initialize the conversation history with a message from the chatbot
     message_log = "You are a helpful assistant.\n"
 
