@@ -2,11 +2,11 @@ import openai
 import streamlit as st
 
 # Add a sidebar with a text input box for the API key
-    st.sidebar.title("OpenAI Chatbot")
-    api_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
+st.sidebar.title("OpenAI Chatbot")
+api_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
 
-    # Set up the OpenAI API key
-    openai.api_key = api_key
+# Set up the OpenAI API key
+openai.api_key = api_key
     
 # Function to send a message to the OpenAI chatbot model and return its response
 def send_message(message_log):
